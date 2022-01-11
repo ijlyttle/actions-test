@@ -14,5 +14,5 @@ jobs:
     steps:
       - name: test
         run: |
-          RMD_PATH=($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
+          RMD_PATH='hello world'
           echo $RMD_PATH
