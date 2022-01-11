@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+name: test variables
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: test
+      run: echo "hello world"
