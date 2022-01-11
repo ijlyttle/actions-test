@@ -13,6 +13,6 @@ jobs:
 
     steps:
       - name: test
-        run: |
-          RMD_PATH='hello world'
-          echo $RMD_PATH
+        run: RMD_PATH='hello world'
+      - name: test2
+        run: echo $RMD_PATH
