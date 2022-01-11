@@ -12,11 +12,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
-    env: 
-      RMD_PATH: 'hello world'
-
     steps:
-        
+    
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+        env: 
+          RMD_PATH: 'hello world'
+      
       - name: test
         run: echo $RMD_PATH
         
