@@ -19,7 +19,8 @@ jobs:
         with:
           fetch-depth: 0
         env: 
-          RMD_PATH: 'hello world'
+          RMD_PATH: ($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
+        run: echo $RMD_PATH
       
       - name: test
         run: echo $RMD_PATH
