@@ -8,11 +8,17 @@ on:
 name: test variables
 
 jobs:
+
   test:
     runs-on: ubuntu-latest
+    
+    env: 
+      RMD_PATH: 'hello world'
 
     steps:
+        
       - name: test
-        env: 
-          RMD_PATH: 'hello world'
+        run: echo $RMD_PATH
+        
+      - name: test2
         run: echo $RMD_PATH
