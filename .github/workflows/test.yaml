@@ -21,7 +21,7 @@ jobs:
 
       - name: determine path
         env:
-          RMD_PATH: ($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
+          RMD_PATH: $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$')
         run: echo $RMD_PATH
       
       - name: test
