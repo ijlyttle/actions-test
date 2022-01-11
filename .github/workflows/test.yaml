@@ -18,12 +18,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-        env: 
+
+      - name: determine path
+        env:
           RMD_PATH: ($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
         run: echo $RMD_PATH
       
       - name: test
         run: echo $RMD_PATH
         
-      - name: test2
-        run: echo $RMD_PATH
